@@ -5,7 +5,8 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "Home",
-    component: Home,
+    component:() =>
+        import("../views/Home.vue")
   },
   {
     path: "/about",
@@ -16,6 +17,24 @@ const routes: Array<RouteRecordRaw> = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
+  {
+    path: "/Users",
+    name: "Users",
+    component: () =>
+        import("../views/Users.vue")
+  },
+  {
+    path: "/Flights",
+    name: "Flights",
+    component:() =>
+        import("../views/Flights.vue")
+  },
+  {
+    path: "/all_tour",
+    name: "all_tour",
+    component:() =>
+        import("../views/AllTours.vue")
+  }
 ];
 
 const router = createRouter({
